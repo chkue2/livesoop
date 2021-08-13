@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'MaruBuri-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'NanumBarunGothic';
   font-style: normal;
   font-weight: 400;
@@ -23,26 +30,20 @@
  }
 
 :root{
-  --max-width: 900px;
-  --max-btn-width: 500px;
-  --main-color: rgb(233, 249, 233);
-  --success-color: #ebf9ec;
-  --disable-color: #ffffff;
-  --link-btn-color: #aafeab;
-  --text-color-red: #d42e2b;
+  --max-width: 1200px;
+  --font-bold: 700;
+  --font-light: 300;
 }
 /* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - https://cssdeck.com/blog/ */
 html{color:#3B3B3B;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
 
 *{
   font-family: 'NanumBarunGothic', sans-serif;
+  font-weight: 400;
   font-size: 16px;
+  color: #1d1f26;
   word-break: keep-all;
   box-sizing: border-box;
-}
-strong{
-  font-weight: 600;
-  font-size: 18px;
 }
 div{box-sizing: border-box;}
 input{outline: none;}
@@ -61,41 +62,230 @@ input[type=radio]{
   border:none;
 }
 
-label input[type=radio]:after{
-  content:'';
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-left: 3px;
-  border:2px solid #d8ae70;
-  border-radius:100%;
-  vertical-align:middle;
-  cursor:pointer;
-}
-
-
-label input[type=radio]:hover:after{
-  background-color: #d8ae70;
-}
-
-label input[type=radio]:checked:after{
-  /* background: url('https://lostinyou4.github.io/leesm/study/images/radio_check.png') 0 0 no-repeat; */
-  background-image: url(/content/media/img/check.svg);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-color: #d8ae70;
-  border:2px solid #d8ae70;
-}
-
 .mobile{display: none;}
 
-
-.container{
-  padding-left: 0;
-  padding-right: 0;
+/* section 공통 */
+.section .section__container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section .section__title{
+  font-size: 46px;
+  font-weight: var(--font-bold);
+  padding-top: 200px;
+  text-align: center;
+}
+.section .section__subtitle{
+  font-size: 26px;
+  margin-top: 24px;
+  text-align: center;
+  font-weight: var(--font-light);
+}
+.section .section__tag{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 8px;
+}
+.section .section__tag span{
+  display: inline-block;
+  padding: 13px 10px;
+  background-color: #f7f7f7;
+  color: #444444;
+  font-weight: var(--font-light);
+}
+.section .section__tag span + span{
+  margin-left: 30px;
 }
 
-@media all and (max-width: 479px){
+/* form 공통 */
+form input, form textarea{
+  flex: 1;
+  border: 1px solid #d6d6d6;
+  background-color: #ffffff;
+  padding: 20px;
+  font-size: 18px;
+}
+form input{
+  height: 70px;
+  line-height: 70px;
+}
+form textarea{
+  height: 145px;
+  resize: none;
+}
+form input::placeholder, form textarea::placeholder{
+  color: #b1b1b1;
+}
+form .form__item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form .form__item + .form__item{
+  margin-top: 24px;
+}
+form .form__item p{
+  width: 120px;
+}
+
+/* footer 공통 */
+.section.section__footer{
+  background-color: #1d1f26;
+  padding: 143px 0px 133px 0px;
+}
+.section.section__footer .section__container{
+  display: flex;
+  justify-content: space-between;
+}
+.section.section__footer p{
+  color: #ffffff;
+}
+.section.section__footer p.company{
+  font-weight: var(--font-bold);
+  padding-bottom: 38px;
+}
+.section.section__footer p.tel{
+  font-size: 23px;
+  font-weight: var(--font-bold);
+  padding-bottom: 11px;
+}
+.section.section__footer p.email{
+  font-weight: var(--font-light);
+}
+.section.section__footer p.ceo,
+.section.section__footer p.address,
+.section.section__footer p.business{
+  font-weight: var(--font-light);
+  line-height: 26px;
+}
+.section.section__footer p.copyright{
+  font-weight: var(--font-light);
+  color: #a5a5a5;
+  padding-top: 16px;
+}
+.section.section__footer .footer__box.icon__box{
+  display: flex;
+}
+
+/* icon 공통 */
+.icon{
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff1a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon + .icon{
+  margin-left: 4px;
+}
+.icon i{
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.icon.icon--insta i{
+  background-image: url(/content/media/icon/insta.svg);
+}
+.icon.icon--youtube i{
+  background-image: url(/content/media/icon/youtube.svg);
+}
+.icon.icon--shopping i{
+  background-image: url(/content/media/icon/shopping.svg);
+}
+.icon.icon--blog i{
+  background-image: url(/content/media/icon/blog.svg);
+}
+
+/* swiper */
+.swiper-pagination-bullet{
+  background-color: #acafb5;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #000000;
+}
+.swiper-pagination-clickable.swiper-pagination-bullets{
+  position: unset;
+  margin-top: 50px;
+  text-align: center;
+}
+.swiper-pagination-clickable.swiper-pagination-bullets span + span{
+  margin-left: 21px;
+}
+.swiper-button-prev, .swiper-button-next{
+  width: 67px;
+  height: 67px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #eaeaea;
+  border-radius: 34px;
+  opacity: 0.7;
+}
+.swiper-button-prev {
+  right: calc(100% - 380px);
+  left: unset;
+}
+.swiper-button-next {
+  left: calc(100% - 380px);
+  right: unset;
+}
+.swiper-button-prev::after, .swiper-button-next::after{
+  content: "";
+  width: 25px;
+  height: 25px;
+}
+.swiper-button-prev::after{
+  background-image: url(/content/media/icon/left-arrow-25-px.svg);
+}
+.swiper-button-next::after{
+  background-image: url(/content/media/icon/right-arrow-25-px.svg);
+}
+
+@media all and (max-width: 1919px){
+  .swiper-button-prev {
+    right: calc(100% - 140px);
+    left: unset;
+  }
+  .swiper-button-next {
+    left: calc(100% - 140px);
+    right: unset;
+  }
+}
+
+@media all and (max-width: 768px){
   .mobile{display: block;}
+
+  .section .section__title{
+    font-size: 28px;
+    padding-top: 60px;
+  }
+  .section .section__subtitle{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .section .section__tag span{
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+  .section .section__tag span + span{
+    margin-left: 7px;
+  }
+
+  .swiper-pagination-clickable.swiper-pagination-bullets{
+    margin-top: 20px;
+  }
+  .swiper-pagination-clickable.swiper-pagination-bullets span + span{
+    margin-left: 10px;
+  }
+
+  .swiper-button-prev, .swiper-button-next{
+    display: none;
+  }
 }
