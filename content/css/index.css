@@ -40,6 +40,7 @@
 .section.section__02 .liveSwiper .swiper-slide{
   width: 384px;
   height: 560px;
+  cursor: pointer;
 }
 .section.section__02 .liveSwiper .swiper-slide img{
   width: 100%;
@@ -60,6 +61,23 @@
 }
 .section.section__04 .section__back{
   height: 609px;
+  position: relative;
+}
+.section.section__04 .section__back .select__image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.section.section__04 .section__back .select__image img{
+  width: 384px;
+  height: 569px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 .section.section__04 .seciton__bg{
   height: 508px;
@@ -78,6 +96,9 @@
 }
 .section.section__04 .liveSwiper3{
   max-width: 1920px;
+}
+.section.section__04 .swiper-pagination3{
+  padding-top: 70px;
 }
 .section.section__05 .section__container{
   max-width: 1980px;
@@ -115,18 +136,6 @@
 .section.section__06 form{
   padding: 50px 0px;
 }
-.section.section__06 .contact__btn{
-  width: 298px;
-  height: 70px;
-  line-height: 70px;
-  font-size: 20px;
-  font-weight: var(--font-bold);
-  color: #ffffff;
-  background-color: #1d1f26;
-  text-align: center;
-  margin: 0 auto;
-  cursor: pointer;
-}
 @media all and (max-width: 768px){
   .section.section__01{
     height: 483px;
@@ -158,7 +167,7 @@
     display: block;
   }
   .section.section__04 .section__back{
-    height: 304px;
+    height: 315px;
   }
   .section.section__04 .seciton__bg{
     height: 254px;
@@ -167,8 +176,18 @@
     width: 192px;
     height: 192px;
   }
+  .section.section__04 .section__back .select__image img{
+    width: 192px;
+    height: 284px;
+  }
+  .section.section__04 .swiper-pagination3{
+    padding-top: 55px;
+  }
   .section.section__05 .section__container{
     padding: 0px 25px;
+  }
+  .section.section__05 .section__title{
+    padding-top: 100px;
   }
   .section.section__05 .liveSwiper4{
     height: auto;
@@ -185,5 +204,14 @@
   .section.section__05 .swiper-pagination4{
     display: block;
   }
-  
+  .section.section__06{
+    margin-top: 120px;
+    padding: 80px 0px 100px 0px;
+  }
+  .section.section__06 .contact__title{
+    font-size: 28px;
+  }
+  .section.section__06 form{
+    padding: 20px 25px 25px 25px;
+  }
 }

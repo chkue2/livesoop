@@ -4,10 +4,10 @@
     <title>스토리&스피치 / 아나운서 MC 쇼호스트 강연자 강사 라이브커머스 | 라이브커머스 · 아나운서 · MC · 쇼호스트 · 스타트업 IR피칭 · 강연 · 강사 섭외</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="스토리&스피치"/>
+    <meta property="og:title" content="라이브숲 | 스토리앤스피치"/>
     <meta property="og:description" content="아나운서 MC 쇼호스트 강연자 강사 라이브커머스"/>
     <meta property="og:image" content="#"/>
-    <meta property="twitter:title" content="스토리&스피치"/>
+    <meta property="twitter:title" content="라이브숲 | 스토리앤스피치"/>
     <meta property="twitter:description" content="아나운서 MC 쇼호스트 강연자 강사 라이브커머스"/>
     <meta property="twitter:image" content="#"/>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -16,12 +16,29 @@
     <link rel="stylesheet" href="/content/css/index.css" />
 
     <script src="/content/lib/jquery-3.5.1-slim.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/content/js/common.js"></script>
     <script src="/content/js/index.js"></script>
   </head>
   <body>
     <div class="wrap">
+      <div class="section section__header header__pc">
+        <div class="section__container">
+          <div class="header__box icon__box">
+            <p class="icon icon--insta"><i></i></p>
+            <p class="icon icon--youtube"><i></i></p>
+            <p class="icon icon--shopping"><i></i></p>
+            <p class="icon icon--blog"><i></i></p>
+          </div>
+          <img class="header__logo" src="/content/media/icon/logo@2x.png" onclick="goHome()"/>
+          <div class="header__box link__box">
+            <p onclick="goAcademy()">아카데미</p>
+          </div>
+        </div>
+      </div>
       <div class="section section__01">
         <div class="title__container">
           <img src="content/media/icon/LIVE.svg" />
@@ -33,20 +50,23 @@
         <p class="section__title">라이브숲의 라이브</p>
           <div class="swiper-container liveSwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="content/media/img/live_01@2x.png" />
-              </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" onclick="goLive(3)">
                 <img src="content/media/img/live_02@2x.png" />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" onclick="goLive(4)">
                 <img src="content/media/img/live_03@2x.png" />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" onclick="goLive(2)">
                 <img src="content/media/img/live_04@2x.png" />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" onclick="goLive(1)">
                 <img src="content/media/img/live_05@2x.png" />
+              </div>
+              <div class="swiper-slide" onclick="goLive(5)">
+                <img src="content/media/img/live_06@2x.png" />
+              </div>
+              <div class="swiper-slide" onclick="goLive(6)">
+                <img src="content/media/img/live_01@2x.png" />
               </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -82,7 +102,10 @@
           <span>#아나운서_쇼호스트_네트워크</span>
         </div>
         <div class="section__back">
-          <div class="seciton__bg">
+          <div class="select__image">
+            <img id="select__image" src="/content/media/img/mingi@2x.png" ondragstart="return false"/>
+          </div>
+          <div class="seciton__bg" id="seciton__bg">
             <div class="swiper-container liveSwiper3">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -135,19 +158,19 @@
           </p>
           <form>
             <div class="form__item">
-              <p>성함</p><input type="text" placeholder="성함을 입력하세요" />
+              <p>성함</p><input type="text" placeholder="성함을 입력하세요" id="name"/>
             </div>
             <div class="form__item">
-              <p>연락처</p><input type="text" placeholder="연락처를 입력하세요" />
+              <p>연락처</p><input type="text" placeholder="연락처를 입력하세요" id="tel"/>
             </div>
             <div class="form__item">
-              <p>이메일</p><input type="text" placeholder="이메일을 입력하세요" />
+              <p>이메일</p><input type="text" placeholder="이메일을 입력하세요" id="email"/>
             </div>
             <div class="form__item">
-              <p>문의내용</p><textarea placeholder="문의내용을 입력하세요"></textarea>
+              <p>문의내용</p><textarea placeholder="문의내용을 입력하세요" id="content"></textarea>
             </div>
           </form>
-          <p class="contact__btn">제출하기</p>
+          <p class="contact__btn" id="sendMail">제출하기</p>
         </div>
       </div>
       <div class="section section__footer">
@@ -170,6 +193,9 @@
             <p class="icon icon--blog"><i></i></p>
           </div>
         </div>
+      </div>
+      <div class="loading">
+        <p>메일 전송중입니다.</p>
       </div>
     </div>
   </body>
