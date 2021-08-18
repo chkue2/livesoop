@@ -6,6 +6,10 @@ $(function(){
     {img: 'content/media/img/nari@2x.png', bg: '#FAF4EF'},
     {img: 'content/media/img/host@2x.png', bg: '#F8F8E5'},
     {img: 'content/media/img/stu_02@2x.png', bg: '#F4E8E4'},
+    {img: 'content/media/img/host_02.png', bg: '#F1E1EC'},
+    {img: 'content/media/img/host_03.png', bg: '#F7E7EB'},
+    {img: 'content/media/img/host_04.png', bg: '#D8E7E8'},
+    {img: 'content/media/img/host_05.png', bg: '#F5F2F3'},
   ];
   var swiper = new Swiper(".liveSwiper", {
     slidesPerView: 'auto',
@@ -44,10 +48,10 @@ $(function(){
     },
   });
   swiper3.on('slideChange', function(){
-    let idx = swiper3.activeIndex - 5;
-    idx = (idx < 0) ? 4 : (idx > 4) ? 0 : idx;
+    const leng = hosts.length;
+    let idx = swiper3.activeIndex - leng;
+    idx = (idx < 0) ? (leng-1) : (idx > (leng-1)) ? 0 : idx;
     const host = hosts[idx];
-    console.log(host);
     $('#select__image').attr('src', host.img);
     $('#seciton__bg').css('background-color', host.bg);
   });
