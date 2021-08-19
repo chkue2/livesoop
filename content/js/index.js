@@ -1,15 +1,15 @@
 $(function(){
   let lastPointX = null;
   const hosts = [
-    {img: 'content/media/img/mingi@2x.png', bg: '#E7EEF7'},
-    {img: 'content/media/img/stu_01@2x.png', bg: '#EBECED'},
-    {img: 'content/media/img/nari@2x.png', bg: '#FAF4EF'},
-    {img: 'content/media/img/host@2x.png', bg: '#F8F8E5'},
-    {img: 'content/media/img/stu_02@2x.png', bg: '#F4E8E4'},
-    {img: 'content/media/img/host_02.png', bg: '#F1E1EC'},
-    {img: 'content/media/img/host_03.png', bg: '#F7E7EB'},
-    {img: 'content/media/img/host_04.png', bg: '#D8E7E8'},
-    {img: 'content/media/img/host_05.png', bg: '#F5F2F3'},
+    {img: '/content/media/img/mingi@2x.png', bg: '#E7EEF7'},
+    {img: '/content/media/img/stu_01@2x.png', bg: '#EBECED'},
+    {img: '/content/media/img/nari@2x.png', bg: '#FAF4EF'},
+    {img: '/content/media/img/host@2x.png', bg: '#F8F8E5'},
+    {img: '/content/media/img/stu_02@2x.png', bg: '#F4E8E4'},
+    {img: '/content/media/img/host_02.png', bg: '#F1E1EC'},
+    {img: '/content/media/img/host_03.png', bg: '#F7E7EB'},
+    {img: '/content/media/img/host_04.png', bg: '#D8E7E8'},
+    {img: '/content/media/img/host_05.png', bg: '#F5F2F3'},
   ];
   var swiper = new Swiper(".liveSwiper", {
     slidesPerView: 'auto',
