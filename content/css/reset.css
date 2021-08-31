@@ -45,7 +45,7 @@ html{color:#3B3B3B;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
   word-break: keep-all;
   box-sizing: border-box;
 }
-body{-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+body{-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; overflow-x: hidden;}
 div{box-sizing: border-box;}
 input, textarea{outline: none;}
 input[type="number"]::-webkit-outer-spin-button,
@@ -71,6 +71,10 @@ select::-ms-expand { display: none; }
 .mobile{display: none;}
 
 /* section 공통 */
+.section{
+  width: 100%;
+  position: relative;
+}
 .section .section__container{
   max-width: var(--max-width);
   margin: 0 auto;
@@ -110,6 +114,10 @@ select::-ms-expand { display: none; }
 }
 .section .section__tag span + span{
   margin-left: 30px;
+}
+.section .swiper-container{
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 /* form 공통 */
