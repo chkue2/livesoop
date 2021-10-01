@@ -22,6 +22,22 @@ const goLive = (x) => {
     case 4 : window.open('https://shoppinglive.naver.com/replays/193926', '_blank'); break; //옥수수
     case 5 : window.open('https://shoppinglive.naver.com/replays/199866', '_blank'); break; //크리스피 어니언
     case 6 : window.open('https://shoppinglive.naver.com/replays/196459', '_blank'); break; //샴푸
+    case 7 : window.open('https://shoppinglive.naver.com/replays/253479', '_blank'); break; //마카롱
+    case 8 : window.open('https://www.youtube.com/watch?v=Up9ZiuGLW7A', '_blank'); break; //위메프
+    case 9 : window.open('https://shoppinglive.naver.com/replays/251878', '_blank'); break; //히스테모
+    default: return false;
+  }
+}
+
+const goYoutube = (x) => {
+  switch(x){
+    case 1 : window.open('https://www.youtube.com/watch?v=Foaw3-wE0l0', '_blank'); break; //뷰티마사지기
+    case 2 : window.open('https://youtu.be/wJMgOf8LQjU', '_blank'); break; //시원스쿨
+    case 3 : window.open('https://www.youtube.com/watch?v=a2HszHCXwK8', '_blank'); break; //TVN 드라마 리뷰
+    case 4 : window.open('https://www.youtube.com/watch?v=LUR6MLX0ib4&list=PLe5ch1rXt2WPaWdcXkvMuZvCMTnUWlnxG&index=15', '_blank'); break; //DB 다이렉트 영상 상담 서비스
+    case 5 : window.open('https://www.youtube.com/watch?v=W1COBnjxapI&list=PLe5ch1rXt2WPaWdcXkvMuZvCMTnUWlnxG&index=22', '_blank'); break; //BBQ 미국법인
+    case 6 : window.open('https://www.youtube.com/watch?v=6fHVjgohp-4', '_blank'); break; //갤럭시 S20
+    case 7 : window.open('https://www.youtube.com/watch?v=Up9ZiuGLW7A', '_blank'); break; //위메프
     default: return false;
   }
 }

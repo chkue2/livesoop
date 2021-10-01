@@ -69,6 +69,20 @@ $(function(){
       prevEl: ".swiper-button-prev",
     },
   });
+  var swiper7 = new Swiper(".liveSwiper7", {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    loop: true,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination7",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
   $(document).on('mousedown', '#select__image', function(e){
     lastPointX = e.clientX;
   });
